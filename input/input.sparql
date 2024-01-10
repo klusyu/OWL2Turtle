@@ -1,0 +1,11 @@
+PREFIX inst: <http://example.org/hospital/instances/>
+PREFIX : <http://example.org/hospital#>
+
+SELECT ?name 
+WHERE { 
+  ?p a :Patient ;
+     :hasName ?name ; 
+     :hasNeoplasm ?tumor .
+  ?tumor  a :Neoplasm ;
+     :hasStage :NSCLC-stage-IIIa .
+}

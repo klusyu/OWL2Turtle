@@ -1,0 +1,197 @@
+<?xml version="1.0"?>
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://example.org/hospital"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://example.org/hospital">
+    <Prefix name="" IRI="http://example.org/hospital#"/>
+    <Prefix name="inst" IRI="http://example.org/hospital/instances/"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Declaration>
+        <Class IRI="#BenignNeoplasm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cancer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LungCancer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MalignantNeoplasm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NSCLC"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NSCLCStage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Neoplasm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NeoplasmStage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Patient"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Person"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SCLC"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SCLCStage"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasNeoplasm"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasStage"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasName"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NSCLC-stage-I"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NSCLC-stage-II"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NSCLC-stage-III"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NSCLC-stage-IIIa"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NSCLC-stage-IIIb"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NSCLC-stage-IV"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SCLC-stage-Extensive"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SCLC-stage-Limited"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#BenignNeoplasm"/>
+        <Class IRI="#Neoplasm"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cancer"/>
+        <Class IRI="#MalignantNeoplasm"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LungCancer"/>
+        <Class IRI="#Cancer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MalignantNeoplasm"/>
+        <Class IRI="#Neoplasm"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NSCLC"/>
+        <Class IRI="#LungCancer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NSCLCStage"/>
+        <Class IRI="#NeoplasmStage"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NSCLCStage"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasStage"/>
+            <Class IRI="#NSCLCStage"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Patient"/>
+        <Class IRI="#Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SCLC"/>
+        <Class IRI="#LungCancer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SCLCStage"/>
+        <Class IRI="#NeoplasmStage"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SCLCStage"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasStage"/>
+            <Class IRI="#SCLCStage"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#NSCLCStage"/>
+        <NamedIndividual IRI="#NSCLC-stage-I"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#NSCLCStage"/>
+        <NamedIndividual IRI="#NSCLC-stage-II"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#NSCLCStage"/>
+        <NamedIndividual IRI="#NSCLC-stage-III"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#NSCLCStage"/>
+        <NamedIndividual IRI="#NSCLC-stage-IIIa"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#NSCLCStage"/>
+        <NamedIndividual IRI="#NSCLC-stage-IIIb"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#NSCLCStage"/>
+        <NamedIndividual IRI="#NSCLC-stage-IV"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SCLCStage"/>
+        <NamedIndividual IRI="#SCLC-stage-Extensive"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SCLCStage"/>
+        <NamedIndividual IRI="#SCLC-stage-Limited"/>
+    </ClassAssertion>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasNeoplasm"/>
+        <Class IRI="#Patient"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasStage"/>
+        <Class IRI="#Neoplasm"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasNeoplasm"/>
+        <Class IRI="#Neoplasm"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasStage"/>
+        <Class IRI="#NeoplasmStage"/>
+    </ObjectPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 5.1.13.2020-01-27T22:08:36Z) https://github.com/owlcs/owlapi/ -->
+
